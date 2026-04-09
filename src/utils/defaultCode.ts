@@ -9,7 +9,7 @@ export const defaultHTML = `<div class="scene">
     <div class="core-inner"></div>
   </div>
   <div class="label">
-    <h1>NEXUS</h1>
+    <h1>COSMOS</h1>
     <p>Online Code Editor</p>
   </div>
 </div>`;
