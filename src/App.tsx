@@ -121,14 +121,16 @@ export default function App() {
     background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
     boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
-    animation: 'float 2.8s ease-in-out infinite alternate, hueShift 3.5s linear infinite',
-    '@keyframes float': {
-      from: { transform: 'translateY(0)' },
-      to: { transform: 'translateY(-5px)' },
-    },
-    '@keyframes hueShift': {
-      '0%': { filter: 'hue-rotate(0deg)' },
-      '100%': { filter: 'hue-rotate(280deg)' },
+    animation: 'colorPulse 4s ease-in-out infinite',
+    '@keyframes colorPulse': {
+      '0%, 100%': {
+        background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
+        boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+      },
+      '50%': {
+        background: 'linear-gradient(135deg, #913EDB, #00d4aa)',
+        boxShadow: '0 0 20px rgba(145, 62, 219, 0.9)',
+      },
     },
   }}
 />
