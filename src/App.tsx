@@ -113,7 +113,7 @@ export default function App() {
             borderColor: 'divider',
           }}
         >
-          <Box
+         <Box
   sx={{
     width: 22,
     height: 22,
@@ -122,24 +122,11 @@ export default function App() {
     boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
 
-    /* Animación combinada: pump + alternancia de color suave */
-    animation: 'pump 2.5s ease-in-out infinite, colorShift 6s ease-in-out infinite',
+    animation: 'pump 2.5s ease-in-out infinite',
 
     '@keyframes pump': {
       '0%, 100%': { transform: 'scale(1)' },
       '50%': { transform: 'scale(1.15)' },
-    },
-
-    '@keyframes colorShift': {
-      '0%': {
-        background: 'linear-gradient(135deg, #00d4aa 0%, #913EDB 100%)',
-      },
-      '50%': {
-        background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 100%)',
-      },
-      '100%': {
-        background: 'linear-gradient(135deg, #00d4aa 0%, #913EDB 100%)',
-      },
     },
   }}
 />
