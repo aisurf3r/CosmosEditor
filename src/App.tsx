@@ -114,22 +114,24 @@ export default function App() {
           }}
         >
           <Box
-          sx={{
-          width: 20,
+  sx={{
+    width: 20,
     height: 20,
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 100%)',
-    boxShadow: '0 0 10px rgba(145, 62, 219, 0.6)',
+    background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 100%)',
+    boxShadow: '0 0 10px rgba(0,212,170,0.6)',
     flexShrink: 0,
-    animation: 'pulse 3s ease-in-out infinite',
-    '@keyframes pulse': {
+    animation: 'pulseVibrate 3s infinite ease-in-out',
+    '@keyframes pulseVibrate': {
       '0%, 100%': {
-        boxShadow: '0 0 10px rgba(145, 62, 219, 0.6)',
-        transform: 'scale(1)',
+        transform: 'scale(1) translate(0, 0)',
+        background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 100%)',
+        boxShadow: '0 0 10px rgba(0,212,170,0.6)',
       },
       '50%': {
-        boxShadow: '0 0 18px rgba(145, 62, 219, 0.9)',
-        transform: 'scale(1.08)',
+        transform: 'scale(1.08) translate(2px, -2px)',
+        background: 'linear-gradient(135deg, #913EDB 0%, #b14eff 100%)',
+        boxShadow: '0 0 16px rgba(145, 62, 219, 0.8)',
       },
     },
   }}
