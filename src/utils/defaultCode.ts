@@ -12,7 +12,7 @@ export const defaultHTML = `<div class="scene">
     <h1>NEXUS</h1>
     <p>Online Code Editor</p>
   </div>
-</div>
+</div>`;
 
 export const defaultCSS = `* {
   margin: 0;
@@ -129,6 +129,7 @@ p {
   letter-spacing: 4px;
 }
 
+/* Animaciones */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
@@ -146,39 +147,41 @@ document.addEventListener('mousemove', (e) => {
   const dx = (e.clientX - cx) / cx;
   const dy = (e.clientY - cy) / cy;
 
-  scene.style.transform = 
-    `perspective(800px) rotateY(${dx * 22}deg) rotateX(${-dy * 22}deg)`;
+  scene.style.transform =
+    \`perspective(800px) rotateY(\${dx * 22}deg) rotateX(\${-dy * 22}deg)\`;
 });
 
 document.addEventListener('mouseleave', () => {
   scene.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
 });
 
+// Estrellas de fondo
 for (let i = 0; i < 80; i++) {
   const star = document.createElement('div');
   const size = Math.random() * 3 + 0.8;
-  star.style.cssText = `
+  star.style.cssText = \`
     position: fixed;
     border-radius: 50%;
     pointer-events: none;
-    width: ${size}px;
-    height: ${size}px;
-    top: ${Math.random() * 100}vh;
-    left: ${Math.random() * 100}vw;
+    width: \${size}px;
+    height: \${size}px;
+    top: \${Math.random() * 100}vh;
+    left: \${Math.random() * 100}vw;
     background: white;
-    opacity: ${Math.random() * 0.7 + 0.3};
-    animation: twinkle ${Math.random() * 5 + 3}s ease-in-out infinite;
-    animation-delay: ${Math.random() * 5}s;
-    box-shadow: 0 0 ${size * 2}px rgba(255,255,255,0.6);
-  `;
+    opacity: \${Math.random() * 0.7 + 0.3};
+    animation: twinkle \${Math.random() * 5 + 3}s ease-in-out infinite;
+    animation-delay: \${Math.random() * 5}s;
+    box-shadow: 0 0 \${size * 2}px rgba(255,255,255,0.6);
+  \`;
   document.body.appendChild(star);
 }
 
+// Animación twinkle
 const style = document.createElement('style');
-style.textContent = `
+style.textContent = \`
   @keyframes twinkle {
     0%, 100% { opacity: 0.9; transform: scale(1); }
     50% { opacity: 0.2; transform: scale(0.6); }
   }
-`;
-document.head.appendChild(style);
+\`;
+document.head.appendChild(style);`;
