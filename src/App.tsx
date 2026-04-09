@@ -121,10 +121,28 @@ export default function App() {
     background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
     boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
-    animation: 'hueShift 3.5s linear infinite',
-    '@keyframes hueShift': {
-      '0%': { filter: 'hue-rotate(0deg)' },
-      '100%': { filter: 'hue-rotate(280deg)' },
+
+    /* Animaciones combinadas: giro + cambio de color */
+    animation: 'spin 4s linear infinite, colorShift 3s ease-in-out infinite',
+
+    '@keyframes spin': {
+      from: { transform: 'rotate(0deg)' },
+      to: { transform: 'rotate(360deg)' },
+    },
+
+    '@keyframes colorShift': {
+      '0%': {
+        background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
+        boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+      },
+      '50%': {
+        background: 'linear-gradient(135deg, #913EDB, #00d4aa)',
+        boxShadow: '0 0 22px rgba(145, 62, 219, 0.9)',
+      },
+      '100%': {
+        background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
+        boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+      },
     },
   }}
 />
