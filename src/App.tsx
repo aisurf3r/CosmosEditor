@@ -115,26 +115,30 @@ export default function App() {
         >
           <Box
   sx={{
-    width: 20,
-    height: 20,
+    width: 22,
+    height: 22,
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 50%, #913EDB 100%)',
-    boxShadow: '0 0 12px rgba(145, 62, 219, 0.6)',
+    background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
+    boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
-    animation: 'float 3s ease-in-out infinite alternate, colorShift 4s linear infinite',
-    '@keyframes float': {
-      '0%': { transform: 'translateY(0px)' },
-      '100%': { transform: 'translateY(-4px)' },
+
+    /* Animación combinada: pump + alternancia de color suave */
+    animation: 'pump 2.5s ease-in-out infinite, colorShift 6s ease-in-out infinite',
+
+    '@keyframes pump': {
+      '0%, 100%': { transform: 'scale(1)' },
+      '50%': { transform: 'scale(1.15)' },
     },
+
     '@keyframes colorShift': {
-      '0%': { 
-        background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 50%, #913EDB 100%)' 
+      '0%': {
+        background: 'linear-gradient(135deg, #00d4aa 0%, #913EDB 100%)',
       },
-      '50%': { 
-        background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 50%, #0088cc 100%)' 
+      '50%': {
+        background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 100%)',
       },
-      '100%': { 
-        background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 50%, #913EDB 100%)' 
+      '100%': {
+        background: 'linear-gradient(135deg, #00d4aa 0%, #913EDB 100%)',
       },
     },
   }}
