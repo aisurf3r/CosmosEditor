@@ -115,21 +115,26 @@ export default function App() {
         >
           <Box
   sx={{
-    width: 22,
-    height: 22,
+    width: 20,
+    height: 20,
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
-    boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+    background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 50%, #913EDB 100%)',
+    boxShadow: '0 0 12px rgba(145, 62, 219, 0.6)',
     flexShrink: 0,
-    animation: 'colorPulse 4s ease-in-out infinite',
-    '@keyframes colorPulse': {
-      '0%, 100%': {
-        background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
-        boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+    animation: 'float 3s ease-in-out infinite alternate, colorShift 4s linear infinite',
+    '@keyframes float': {
+      '0%': { transform: 'translateY(0px)' },
+      '100%': { transform: 'translateY(-4px)' },
+    },
+    '@keyframes colorShift': {
+      '0%': { 
+        background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 50%, #913EDB 100%)' 
       },
-      '50%': {
-        background: 'linear-gradient(135deg, #913EDB, #00d4aa)',
-        boxShadow: '0 0 20px rgba(145, 62, 219, 0.9)',
+      '50%': { 
+        background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 50%, #0088cc 100%)' 
+      },
+      '100%': { 
+        background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 50%, #913EDB 100%)' 
       },
     },
   }}
