@@ -122,8 +122,8 @@ export default function App() {
     boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
 
-    /* Animaciones combinadas: giro + cambio de color */
-    animation: 'spin 4s linear infinite, colorShift 3s ease-in-out infinite',
+    /* Giro + cambio de color solo entre turquesa y violeta */
+    animation: 'spin 4s linear infinite, colorShift 3.5s ease-in-out infinite',
 
     '@keyframes spin': {
       from: { transform: 'rotate(0deg)' },
@@ -137,7 +137,7 @@ export default function App() {
       },
       '50%': {
         background: 'linear-gradient(135deg, #913EDB, #00d4aa)',
-        boxShadow: '0 0 22px rgba(145, 62, 219, 0.9)',
+        boxShadow: '0 0 22px rgba(145, 62, 219, 0.95)',
       },
       '100%': {
         background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
