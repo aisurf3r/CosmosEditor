@@ -118,21 +118,12 @@ export default function App() {
     width: 20,
     height: 20,
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 100%)',
-    boxShadow: '0 0 10px rgba(0,212,170,0.6)',
+    background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 100%)',
+    boxShadow: '0 0 12px rgba(145, 62, 219, 0.6)',
     flexShrink: 0,
-    animation: 'pulseVibrate 3s infinite ease-in-out',
-    '@keyframes pulseVibrate': {
-      '0%, 100%': {
-        transform: 'scale(1) translate(0, 0)',
-        background: 'linear-gradient(135deg, #00d4aa 0%, #0088cc 100%)',
-        boxShadow: '0 0 10px rgba(0,212,170,0.6)',
-      },
-      '50%': {
-        transform: 'scale(1.08) translate(2px, -2px)',
-        background: 'linear-gradient(135deg, #913EDB 0%, #b14eff 100%)',
-        boxShadow: '0 0 16px rgba(145, 62, 219, 0.8)',
-      },
+    animation: 'pulseAndShift 4s ease-in-out infinite',
+    '&:hover': {
+      animationPlayState: 'paused',
     },
   }}
           />
