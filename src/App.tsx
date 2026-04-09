@@ -118,12 +118,17 @@ export default function App() {
     width: 20,
     height: 20,
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 100%)',
-    boxShadow: '0 0 12px rgba(145, 62, 219, 0.6)',
+    background: '#913EDB',
+    boxShadow: '0 0 12px rgba(145, 62, 219, 0.8)',
     flexShrink: 0,
-    animation: 'pulseAndShift 4s ease-in-out infinite',
+    
+    // Animación más visible
+    animation: 'colorShift 3s ease-in-out infinite',
+    
     '&:hover': {
       animationPlayState: 'paused',
+      transform: 'scale(1.25)',
+      boxShadow: '0 0 20px rgba(145, 62, 219, 1)',
     },
   }}
           />
