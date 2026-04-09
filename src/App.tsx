@@ -122,26 +122,18 @@ export default function App() {
     boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
 
-    /* Giro + cambio de color solo entre turquesa y violeta */
-    animation: 'spin 4s linear infinite, colorShift 6s ease-in-out infinite',
-
-    '@keyframes spin': {
-      from: { transform: 'rotate(0deg)' },
-      to: { transform: 'rotate(360deg)' },
-    },
+    /* Solo cambio de color suave */
+    animation: 'colorShift 7s ease-in-out infinite',
 
     '@keyframes colorShift': {
       '0%': {
-        background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
-        boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+        background: 'linear-gradient(135deg, #00d4aa 0%, #913EDB 100%)',
       },
       '50%': {
-        background: 'linear-gradient(135deg, #913EDB, #00d4aa)',
-        boxShadow: '0 0 22px rgba(145, 62, 219, 0.95)',
+        background: 'linear-gradient(135deg, #913EDB 0%, #00d4aa 100%)',
       },
       '100%': {
-        background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
-        boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
+        background: 'linear-gradient(135deg, #00d4aa 0%, #913EDB 100%)',
       },
     },
   }}
