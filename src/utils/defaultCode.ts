@@ -3,15 +3,16 @@ export const defaultHTML = `<div class="scene">
     <div class="ring ring-1"></div>
     <div class="ring ring-2"></div>
     <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
   </div>
   <div class="core">
     <div class="core-inner"></div>
   </div>
   <div class="label">
-    <h1>COSMOS</h1>
-    <p>move your cursor</p>
+    <h1>NEXUS</h1>
+    <p>Online Code Editor</p>
   </div>
-</div>`;
+</div>
 
 export const defaultCSS = `* {
   margin: 0;
@@ -20,24 +21,25 @@ export const defaultCSS = `* {
 }
 
 body {
-  background: #050510;
+  background: #0b0014;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
   overflow: hidden;
+  color: white;
 }
 
 .scene {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
   transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.08s ease-out;
 }
 
 .rings {
@@ -51,74 +53,80 @@ body {
 .ring {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid transparent;
+  border: 2px solid transparent;
 }
 
 .ring-1 {
-  width: 320px;
-  height: 320px;
-  border-top-color: #00d4aa;
-  border-right-color: rgba(0, 212, 170, 0.15);
-  animation: spin 5s linear infinite;
+  width: 340px;
+  height: 340px;
+  border-top-color: #a855f7;
+  border-right-color: rgba(168, 85, 247, 0.2);
+  animation: spin 6s linear infinite;
 }
 
 .ring-2 {
-  width: 230px;
-  height: 230px;
-  border-top-color: #ff6b6b;
-  border-left-color: rgba(255, 107, 107, 0.15);
-  animation: spin 3.5s linear infinite reverse;
+  width: 260px;
+  height: 260px;
+  border-top-color: #22d3ee;
+  border-left-color: rgba(34, 211, 238, 0.2);
+  animation: spin 4.2s linear infinite reverse;
 }
 
 .ring-3 {
-  width: 150px;
-  height: 150px;
-  border-top-color: #ffd93d;
-  border-bottom-color: rgba(255, 217, 61, 0.15);
-  animation: spin 2.5s linear infinite;
+  width: 180px;
+  height: 180px;
+  border-top-color: #f472b6;
+  border-bottom-color: rgba(244, 114, 182, 0.25);
+  animation: spin 2.8s linear infinite;
+}
+
+.ring-4 {
+  width: 110px;
+  height: 110px;
+  border: 1.5px dashed rgba(163, 163, 255, 0.4);
+  animation: spin 8s linear infinite;
 }
 
 .core {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #40ffe0, #00a882);
-  box-shadow:
-    0 0 20px rgba(0, 212, 170, 0.8),
-    0 0 50px rgba(0, 212, 170, 0.3),
-    0 0 100px rgba(0, 212, 170, 0.1);
-  animation: pulse 2.5s ease-in-out infinite;
+  background: radial-gradient(circle at 40% 30%, #c084fc, #7e22ce);
+  box-shadow: 
+    0 0 30px #c084fc,
+    0 0 60px #a855f7,
+    0 0 120px rgba(168, 85, 247, 0.4);
+  animation: pulse 2.2s ease-in-out infinite;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .core-inner {
   position: absolute;
-  inset: 8px;
+  inset: 10px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 30%, rgba(255,255,255,0.6), transparent);
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.75), transparent);
 }
 
 .label {
   position: absolute;
-  bottom: -70px;
+  bottom: -80px;
   text-align: center;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.95);
   text-transform: uppercase;
 }
 
 p {
-  font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.25);
-  letter-spacing: 3px;
-  margin-top: 6px;
-  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 8px;
+  letter-spacing: 4px;
 }
 
 @keyframes spin {
@@ -127,7 +135,7 @@ p {
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.18); }
 }`;
 
 export const defaultJS = `const scene = document.querySelector('.scene');
@@ -137,30 +145,40 @@ document.addEventListener('mousemove', (e) => {
   const cy = window.innerHeight / 2;
   const dx = (e.clientX - cx) / cx;
   const dy = (e.clientY - cy) / cy;
-  scene.style.transform =
-    'perspective(600px) rotateY(' + (dx * 18) + 'deg) rotateX(' + (-dy * 18) + 'deg)';
+
+  scene.style.transform = 
+    `perspective(800px) rotateY(${dx * 22}deg) rotateX(${-dy * 22}deg)`;
 });
 
 document.addEventListener('mouseleave', () => {
-  scene.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg)';
+  scene.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
 });
 
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 80; i++) {
   const star = document.createElement('div');
-  const size = Math.random() * 2.5 + 0.5;
-  star.style.cssText =
-    'position:fixed;border-radius:50%;pointer-events:none;' +
-    'width:' + size + 'px;height:' + size + 'px;' +
-    'top:' + (Math.random() * 100) + 'vh;' +
-    'left:' + (Math.random() * 100) + 'vw;' +
-    'background:rgba(255,255,255,' + (Math.random() * 0.6 + 0.1) + ');' +
-    'animation:twinkle ' + (Math.random() * 4 + 2) + 's ease-in-out infinite;' +
-    'animation-delay:' + (Math.random() * 4) + 's;';
+  const size = Math.random() * 3 + 0.8;
+  star.style.cssText = `
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    width: ${size}px;
+    height: ${size}px;
+    top: ${Math.random() * 100}vh;
+    left: ${Math.random() * 100}vw;
+    background: white;
+    opacity: ${Math.random() * 0.7 + 0.3};
+    animation: twinkle ${Math.random() * 5 + 3}s ease-in-out infinite;
+    animation-delay: ${Math.random() * 5}s;
+    box-shadow: 0 0 ${size * 2}px rgba(255,255,255,0.6);
+  `;
   document.body.appendChild(star);
 }
 
 const style = document.createElement('style');
-style.textContent =
-  '@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}' +
-  '50%{opacity:0.2;transform:scale(0.5)}}';
-document.head.appendChild(style);`;
+style.textContent = `
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.6); }
+  }
+`;
+document.head.appendChild(style);
