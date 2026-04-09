@@ -133,7 +133,7 @@ export default function App() {
               opacity: 0.85,
             }}
           >
-            CodePlay
+            Cosmos 3ditor
           </Typography>
 
           <Box sx={{ flex: 1 }} />
