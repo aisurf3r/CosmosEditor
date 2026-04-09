@@ -115,23 +115,23 @@ export default function App() {
         >
           <Box
   sx={{
-    width: 20,
-    height: 20,
+    width: 22,
+    height: 22,
     borderRadius: '50%',
-    background: '#913EDB',
-    boxShadow: '0 0 12px rgba(145, 62, 219, 0.8)',
+    background: 'linear-gradient(135deg, #00d4aa, #913EDB)',
+    boxShadow: '0 0 15px rgba(145, 62, 219, 0.7)',
     flexShrink: 0,
-    
-    // Animación más visible
-    animation: 'colorShift 3s ease-in-out infinite',
-    
-    '&:hover': {
-      animationPlayState: 'paused',
-      transform: 'scale(1.25)',
-      boxShadow: '0 0 20px rgba(145, 62, 219, 1)',
+    animation: 'float 2.8s ease-in-out infinite alternate, hueShift 3.5s linear infinite',
+    '@keyframes float': {
+      from: { transform: 'translateY(0)' },
+      to: { transform: 'translateY(-5px)' },
+    },
+    '@keyframes hueShift': {
+      '0%': { filter: 'hue-rotate(0deg)' },
+      '100%': { filter: 'hue-rotate(280deg)' },
     },
   }}
-          />
+/>
           <Typography
             sx={{
               fontSize: '0.78rem',
