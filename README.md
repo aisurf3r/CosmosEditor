@@ -11,9 +11,10 @@
 [![MUI](https://img.shields.io/badge/MUI-5-007FFF?style=flat-square&logo=mui)](https://mui.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-00d4aa?style=flat-square)](LICENSE)
 
-[**Live Demo →**](https://cosmos3ditor.vercel.app) · [Report a bug](https://github.com/aisurf3r/CosmosEditor/issues) · [Request a feature](https://github.com/aisurf3r/CosmosEditor/issues)
+[**Live Demo →**](https://cosmoseditor.vercel.app) · [Report a bug](https://github.com/aisurf3r/CosmosEditor/issues) · [Request a feature](https://github.com/aisurf3r/CosmosEditor/issues)
 
 </div>
+<img width="1920" height="963" alt="{C0C96F4B-4870-4473-A748-0634224A4109}" src="https://github.com/user-attachments/assets/e29d5523-c2c9-4a86-be5b-c6d6a3e35d7f" />
 
 ---
 
